@@ -1,0 +1,98 @@
+/* Put any additional CSS here */
+
+.lcla {
+	display: inline-block;
+    float: left;
+    clear: left;
+    width: 165px;
+    text-align: right;
+    padding-right: 20px;
+    font-family: Century Gothic;
+    font-weight: bold;
+}
+
+.row {
+	padding-bottom: 15px;
+}
+
+.row1 {
+	font-family: Century Gothic;
+	font-weight: bold;
+}
+
+input {
+  display: inline-block;
+  float: left;
+  margin-right: 30px;
+}
+
+form {
+	margin-top: 60px;
+	margin-left: 250px;
+}
+
+td {
+	font-family: Century Gothic;
+	font-weight: bold;
+	padding: 12px 12px 12px 12px;
+}
+
+
+#lastsubmit{
+	margin-left: 390px;
+}
+
+#sub{
+	margin-top: 30px;
+	margin-left: 170px;
+}
+
+#submit {
+	padding: 10px 15px;
+    color: #FFFDFD;
+    background-color: #555;
+    font-family: Century Gothic;
+    border: 0 none;
+    cursor: pointer;
+}
+
+select {
+   background: transparent;
+   font-size: 12px;
+   font-family: Century Gothic;
+   height: 30px;
+ }
+
+#view {
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+#viewoption {
+	font-weight: bold;
+}
+
+#glab {
+	margin-left: 325px;
+	font-family: Century Gothic;
+	font-weight: bold;
+}
+
+.nav {
+   margin-left: -160px;
+}
+
+
+.nav-tabs.nav-justified {
+	margin-left: -160px;
+    width: 150%;
+}
+
+#bar_graph{
+	padding-top: 35px;
+}
+
+#bargraph{
+	font-size: 25px;
+	font-weight: normal;
+}

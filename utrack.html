@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>UTrack!</title>
+    <link rel="stylesheet" href="css/ext/bootstrap.css"/>
+    <link rel="stylesheet" href="css/utrack.css"/>
+</head>
+<body>
+
+    <div id="app-container" class="container">
+
+        <header>
+            <h1>UTrack!
+              <img src="../a1/images/images1.png" style="width:60px;height:60px" />
+              <img src="../a1/images/images.jpeg" style="width:60px;height:60px" />
+              <img src="../a1/images/images.png" style="width:60px;height:60px" />
+              <img src="../a1/images/Football.png" style="width:60px;height:60px" />
+            </h1>
+            <h5>
+              Track and analyze data that matters to you!
+            </h5>
+        </header>
+        <div id="nav_div">
+            <!-- For the usages of row and col classes, refer to Bootstrap API -->
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <ul class="nav nav-tabs nav-justified">
+                        <li id="nav-input-tab" class="active"><a href="#input">Input</a></li>                
+                        <li id="nav-analysis-tab"><a href="#analysis">Analysis</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="input-div">
+            <h2></h2>
+            <!-- Put HTML here to support user input of data -->
+            <form id="dataInput" onsubmit="return false">
+               <div class="row row1">
+                  <label class="lcla">activity:</label> 
+                    <select id="allactivity">
+                      <option value="writing code">Writing Code</option>
+                      <option value="eating dinner">Eating Dinner</option>
+                      <option value="playing sports">Playing Sports</option>
+                      <option value="studying for exams">Studying for Exams</option>
+                      <option value="attending lectures">Attending Lectures</option>
+                      <option value="watching TV">Watching TV</option>
+                    </select>
+                </div>
+            
+                <div class="row row1">
+                  <label class="lcla">energy level:</label>
+                  <input id="energy" class="ins"
+                         type="number" min="1" max="5" style="width: 140px"
+                         oninvalid="setCustomValidity('This field should be an integer from 1 to 5')"
+                         onchange="try{setCustomValidity('')}catch(e){}"
+                         required>
+                         (1=exhausted, 5=very awake)
+                         
+                </div>
+            
+               <div class="row row1">
+                 <label class="lcla">stress level:</label>
+                  <input id="stress" class="ins"
+                         type="number" min="1" max="5" style="width: 140px"
+                         oninvalid="setCustomValidity('This field should be an integer from 1 to 5')"
+                         onchange="try{setCustomValidity('')}catch(e){}"
+                         required>
+                  (1=very stressed, 5=very relaxed)
+               </div>
+
+               <div class="row row1">
+                  <label class="lcla">happiness level:</label>
+                  <input id="happiness" class="ins"
+                         type="number" min="1" max="5" style="width: 140px"
+                         oninvalid="setCustomValidity('This field should be an integer from 1 to 5')"
+                         onchange="try{setCustomValidity('')}catch(e){}"
+                         required>
+                  (1=depressed, 5=very happy)
+               </div>
+            
+               <div class="row row1">
+                  <label class="lcla">time spent:</label>
+                  <input id="time" class="ins"
+                         type="number"  min="0" style="width: 140px"
+                         oninvalid="setCustomValidity('This field should be a positive integer')"
+                         onchange="try{setCustomValidity('')}catch(e){}"
+                         required>
+                  minutes
+               </div>
+            
+              <div id="sub" class="form-group">
+                  <button id="submit">submit</button>
+              </div>
+
+              <div id="lastsubmit">Last data entry: Haven't received data yet.</div>
+            
+            </form>
+        </div>
+
+        <div id="analysis-div" class="hidden">
+            <h2></h2>
+            <!-- Put HTML here to support users in analyzing their data -->
+            <div id="view">
+              <label for="view">Select View:</label>
+              <select id="viewoption">
+                  <option value="ts">table summary</option>
+                  <option value="bar graph">bar graph</option>
+              </select>
+            </div>
+
+            <div id="table summary">
+                <table style="width:100%" class="table-striped" id="ts">
+                    <tr>
+                      <td>Activities you are tracking:</td>
+                      <td>Time Spent</td>
+                    </tr>
+                    <tr>
+                        <td>writing code</td>
+                        <td id="WritingCodeTime">0</td>
+                    </tr>
+                    <tr>
+                        <td>eating dinner</td>
+                        <td id="EatingDinnerTime">0</td>
+                    </tr>
+                    <tr>
+                        <td>playing sports</td>
+                        <td id="PlayingSportsTime">0</td>
+                    </tr>
+                    <tr>
+                        <td>studying for exams</td>
+                        <td id="StudyingForExamsTime">0</td>
+                    </tr>
+                    <tr>
+                        <td>attending lectures</td>
+                        <td id="AttendingLecturesTime">0</td>
+                    </tr>
+                    <tr>
+                        <td>watching TV</td>
+                        <td id="WatchingTVTime">0</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="bar graph">
+              <label for="graph" id="glab">Your Average Energy, Stress and Happiness Level:</label> 
+                <div id="bar_graph">
+                    <canvas id="bargraph" height="500" width="800">
+                    </canvas>
+                </div>
+            </div>    
+        </div>
+        <footer>
+            <div id="unit-tests">
+                <!-- Keep this here so TAs can run your unit tests -->
+                <a href="unit_tests.html">Run Unit Tests</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/ext/underscore.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/utrack.js"></script>
+</body>
+</html>
